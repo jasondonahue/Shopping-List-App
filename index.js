@@ -41,5 +41,5 @@ $(function() {
     })
 });
 
-//Making change to track in GH.
+//Making changes to track in GH.
       
