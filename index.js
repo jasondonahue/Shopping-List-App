@@ -27,12 +27,14 @@ $(function() {
 
 });
 });     
-//March 7. Moved these functions outside of the above function to see if they needed to be outside of the other.  They still don't work.
+//March 7. Added these lines to make the buttons work.  These functions below were originally inside the addItem function, at the end of the code at line 27.  They didn't work, so I moved these functions outside of the above function to see if they needed to be outside of the other.  They still don't work.
 $(function() {
     $("button").click(function(event) {
-        $('#shopping-item-toggle').toggleClass('shopping-item_checked');
-        $('ul').on('click', 'shopping-item-delete', function(event)   {
-            this.remove(); 
+        $('ul').on('click', '.shopping-item-toggle', function(event) {
+            this.toggleClass('.shopping-item__checked');
+        });
+        $('ul').on('click', '.shopping-item-delete', function(event)   {
+            this.closest("li").remove(); 
         });
     });
 });
