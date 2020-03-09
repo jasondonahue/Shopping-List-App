@@ -31,7 +31,7 @@ $(function() {
 $(function() {
     $("button").click(function(event) {
         $('ul').on('click', '.shopping-item-toggle', function(event) {
-            $(this).closest("li").toggleClass('shopping-item__checked');
+            $("this.closest('li')").find("li > span").toggleClass('shopping-item__checked');
         });
         $('ul').on('click', '.shopping-item-delete', function(event)   {
             this.closest("li").remove(); 
