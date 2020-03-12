@@ -28,16 +28,24 @@ $(function() {
 });
 });     
 //March 7. Added these lines to make the buttons work.  These functions below were originally inside the addItem function, at the end of the code at line 27.  They didn't work, so I moved these functions outside of the above function to see if they needed to be outside of the other.  They still don't work.
-$(function() {
-    $("button").click(function(event) {
-        $('ul').on('click', '.shopping-item-toggle', function(event) {
-            $("this.closest('li')").find("li > span").toggleClass('shopping-item__checked');
-        });
+
+//$(function() {
+    
+    //$("button").click(function(event) {
+        // $('ul').on('click', '.shopping-item-toggle', function(event) {
+        //     $(this).find('li > span.shopping-item').toggleClass('shopping-item__checked');
+        // });
+
+        $('ul').on('click', '.shopping-item-toggle', function (event) {
+            $(this).parent().siblings().toggleClass('shopping-item__checked');
+          })
+
         $('ul').on('click', '.shopping-item-delete', function(event)   {
             this.closest("li").remove(); 
         });
-    });
-});
+    //});
+//});
+
 //Mar 4. I'm at the point where I want this line to essentially copy the previous li, substituting addItem for bread.  I probably can't do that so I'm ok with line 10 as it is, but I also want to add lines 58-65 from the HTML into this code.  The code passed into the .append() takes care of HTML line 57, but how to effect HMTL lines 57-65?  I can't even figure out how to put a hard return into the () of the .append().  I tried this...
          // $("ul").append("<li>" \n <span class="shopping-item"> + addItem + "</li>");
 // ... but that didn't work.  I also tried telling the line to toggleClass the closest div, like this...
